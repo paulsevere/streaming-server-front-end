@@ -1,0 +1,41 @@
+.arrow-buttons{
+
+float:right;
+}
+
+.icon-button svg {
+ stroke:rgba(64, 132, 201, 0.57);
+ stroke-width:1px;
+ fill: transparent !important;
+}
+
+.icon-button:hover svg {
+  fill:rgb(64, 132, 201) !important;
+}
+
+.modal div {
+  box-shadow:none !important;
+
+}
+.modal-body >  div{
+  background-color: rgb(53, 51, 57) !important;
+
+}
+.modal-body {
+  position:fixed !important;
+  top:10% !important;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
+.input-button{
+  margin-left:15px;
+
+}
+.input-group{
+  display:flex;
+}
+.input-group > div{
+  margin:0 10px;
+}

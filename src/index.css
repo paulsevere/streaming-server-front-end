@@ -1,5 +1,56 @@
+
+html{
+  background-color: transparent;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: rgb(53, 51, 57);
+  color:white;
+
+}
+
+.editor-holder{
+  padding:1vh;
+  padding-top:1vh;
+  margin:2.5vh 2.5vw;
+  background-color: rgb(58, 56, 62);
+}
+.ace-monokai {
+  background-color: transparent!important;
+}
+
+.menu {
+  position:fixed;
+  display:flex;
+  bottom:2.5vh;
+  right:2.5vw;
+  /*height:300px;*/
+  /*width:300px;*/
+  background-color: rgb(57, 63, 68);
+  z-index:201;
+  padding:20px;
+}
+
+/*.input {
+  background-color: transparent;
+  color:inherit;
+}*/
+
+.update-counter{
+  position:fixed;
+  top:6vh;
+  right: 6vh;
+  color:rgb(81, 134, 213);
+  font-family:'Roboto';
+  font-size:30px;
+}
+.button.is-primary{
+  background-color: rgba(116, 134, 212, 0.81);
+
+}
+.button.is-primary:hover{
+  background-color: rgb(117, 135, 212);
+
 }
