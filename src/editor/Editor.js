@@ -7,6 +7,7 @@ import Button from './Button';
 import {Input} from './Input';
 import {ArrowButtons} from './controls/backAndForth'
 import {Controls} from './controls'
+import {shuffleHistory} from './controls/editorHistory'
 import './controls/controls.css';
 
 
@@ -20,13 +21,17 @@ class Editor extends Component {
     super(props);
     // this.room_id = this.props.params.room_id || 'default'
     this.state = {
-      editorText: props.updates[props.updates.length - 1]
+      editorText: props.updates[0],
+      histPos:0
         };
+    this.rewind = shuffleHistory(1).bind(this);
+    this.fastForward = shuffleHistory(-1).bind(this);
+
     window.editor = this;
 
   }
   onChange = (editorText) => {
-    this.setState({editorText})
+    // this.setState({editorText})
   }
 
   roomChange = (room_id)=>{
@@ -49,6 +54,7 @@ class Editor extends Component {
   }
 
   componentWillReceiveProps({updates, params}) {
+    console.log(this)
     if(params.room_id !== this.props.params.room_id){
       this.setState({
         editorText: ''
@@ -56,8 +62,9 @@ class Editor extends Component {
     }
     else if (this.props.updates.length !== updates.length) {
       this.setState({
-        editorText: updates[updates.length - 1]
-      })
+        editorText: updates[0]
+      });
+      // this.goBack = goBack(updates)
     }
 
   }
@@ -65,8 +72,8 @@ class Editor extends Component {
   render() {
     return (
       <div className="editor-holder">
-        <ArrowButtons/>
-        <Controls updateRoom={this.roomChange} />
+        <ArrowButtons updates={this.props.updates} histPos={this.state.histPos} rewind={this.rewind} fastForward={this.fastForward}/>
+        <Controls updates={this.props.updates}  updateRoom={this.roomChange} />
         <Menu>
           <Input roomName={this.state.roomName} submit={this.setRoomName} hintText="room name"/>
           <Button text="broadcast">{this.createBroadcast}</Button>

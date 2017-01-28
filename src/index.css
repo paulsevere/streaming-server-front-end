@@ -47,10 +47,13 @@ body {
   font-size:30px;
 }
 .button.is-primary{
-  background-color: rgba(116, 134, 212, 0.81);
+  background-color: #2196F3;
 
 }
 .button.is-primary:hover{
   background-color: rgb(117, 135, 212);
 
+}
+.icon-button{
+  background-color: rgb(190, 95, 138);
 }

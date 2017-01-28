@@ -20,7 +20,7 @@ function room_id(state = null, action) {
 function updates(state = [], action) {
   switch (action.type) {
     case 'NEW_UPDATE':
-      return state.concat(action.update);
+      return action.update.concat(state)
     default:
       return state
   }
