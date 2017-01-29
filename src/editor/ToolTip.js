@@ -1,6 +1,5 @@
 import React from 'react';
 import GearIcon from 'material-ui/svg-icons/action/settings';
-import {Card} from 'material-ui/Card'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import IconButton from 'material-ui/IconButton'
@@ -13,10 +12,10 @@ let inlineIcon = {
 
 }
 
-let style = {
-  padding: 30,
-  display: 'flex'
-}
+// let style = {
+//   padding: 30,
+//   display: 'flex'
+// }
 
 export default class ToolTip extends React.Component {
   constructor(props) {

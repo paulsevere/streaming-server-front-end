@@ -6,8 +6,8 @@ import {ArrowButtons} from './controls/backAndForth'
 import {Controls} from './controls'
 import {shuffleHistory} from './controls/editorHistory'
 import ToolTip from './ToolTip'
-import './controls/controls.scss';
-import './editor_style.scss';
+// import './controls/controls.scss';
+// import './editor_style.scss';
 
 // var ID = function () {
 //   // return Math.random().toString(36).substr(2, 9);
