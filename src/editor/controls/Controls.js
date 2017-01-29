@@ -26,11 +26,17 @@ class Controls extends React.Component{
     this.state = {
       open:false,
       language:'javascript',
-      keyBinding:"shift + enter"
+      keyBinding:"shift enter"
     }
+
     this.tempRoomValue = '';
   }
 
+  componentDidMount(){
+    this.keypressListener = new window.keypress.Listener();
+    window.Listener = this.keypressListener
+    this.submitKey = this.keypressListener.simple_combo(this.state.keyBinding, this.props.pushUpdate);
+  }
   toggleModal = ()=>{
     this.setState({open:!this.state.open})
   }
@@ -39,6 +45,12 @@ class Controls extends React.Component{
   }
   handleRoomChange=(e, room_id)=>{
     this.tempRoomValue = room_id
+  }
+  handleKeyPressChange=(e, binding)=>{
+    let bindings = ["shift enter","cmd enter","cmd shift enter"];
+    let chosen = bindings[binding];
+    this.submitKey.keys = chosen.split(" ");
+    this.setState({keyBinding:chosen})
   }
 
   render(){
@@ -73,11 +85,11 @@ class Controls extends React.Component{
         <SelectField
         floatingLabelText="key binding"
         value={this.state.keyBinding}
-        onChange={this.handleChange}
+        onChange={this.handleKeyPressChange}
       >
-        <MenuItem value={"shift + enter"} primaryText="shift + enter" />
-        <MenuItem value={"cmd + enter"} primaryText="cmd + enter" />
-        <MenuItem value={"ctrl + shift + enter"} primaryText="ctrl + shift + enter" />
+        <MenuItem value={"shift enter"} primaryText="shift + enter" />
+        <MenuItem value={"cmd enter"} primaryText="cmd + enter" />
+        <MenuItem value={"cmd shift enter"} primaryText="cmd + shift + enter" />
       </SelectField>
     </div>
          </Dialog>

@@ -6,7 +6,7 @@ export function shuffleHistory(inc) {
         let {
             histPos
         } = this.state;
-        if (between(histPos + inc, 0, updates.length)) {
+        if (between(histPos + inc, 0, updates.length - 1)) {
             this.setState({
                 editorText: updates[histPos + inc],
                 histPos: histPos + inc,

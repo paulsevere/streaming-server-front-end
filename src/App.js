@@ -7,7 +7,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import { Router, Route, browserHistory, Redirect } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-
 injectTapEventPlugin();
 
 import store from './store/store';

@@ -1,5 +1,5 @@
 import React from 'react';
-import FontIcon from 'material-ui/FontIcon';
+// import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
@@ -33,7 +33,7 @@ function SideBadge({badgeContent}){
   }
   let hidden={
 
-    color:'rgba(242, 237, 236, 0.77)',
+    color:'transparent',
     backgroundColor:'transparent',
   }
   if(!badgeContent){
@@ -49,27 +49,29 @@ function SideBadge({badgeContent}){
   )
 }
 
-function ArrowButton(props){
-  let {badgeNum} = props;
+function ArrowButton({style, iconStyle, badgeNum, onTouchTap, children}){
+
   let className = badgeNum ? "icon-button":"icon-button disabled";
   return (
-    <IconButton primary={true} {...props} className={className}/>
+    <IconButton style={style} iconStyle={iconStyle} onTouchTap={onTouchTap} className={className}>
+      {children}
+    </IconButton>
   )
 }
 
 
 export const ArrowButtons = ({rewind, fastForward, show, updates, histPos}) => {
-  let backNum = updates.length - histPos;
+  let backNum = updates.length - histPos -1;
   let forNum = histPos;
   return (
     <div className="arrow-buttons">
       <SideBadge badgeContent={backNum}/>
-      <IconButton onTouchTap={rewind} className="icon-button" {...IconStyle}>
+      <ArrowButton badgeNum={backNum} onTouchTap={rewind} {...IconStyle}>
         <ArrowBack/>
-      </IconButton>
-      <IconButton primary={true} onTouchTap={fastForward} className="icon-button" {...IconStyle}>
+      </ArrowButton>
+      <ArrowButton badgeNum={forNum}  onTouchTap={fastForward}  {...IconStyle}>
         <ArrowForward />
-      </IconButton>
+      </ArrowButton>
       <SideBadge badgeContent={forNum}/>
 
     </div>

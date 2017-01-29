@@ -1,7 +1,7 @@
 import React from 'react';
 import AceEditor from 'react-ace';
 import 'brace/mode/javascript';
-import 'brace/theme/monokai';
+import 'brace/theme/pep';
 
 const Editor = function(){
   return (
@@ -9,10 +9,10 @@ const Editor = function(){
   <div style={{padding:'2vh 2vw'}}>
   <AceEditor
   mode="javascript"
-  theme="monokai"
+  theme="pep"
   name="UNIQUE_ID_OF_DIV"
   editorProps={{
-    $blockScrolling: true
+    $blockScrolling: Infinity
   }}
   value={this.state.editorText}
   onChange={this.onChange}
