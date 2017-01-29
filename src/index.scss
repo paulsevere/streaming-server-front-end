@@ -1,4 +1,4 @@
-
+@import './style/colors.scss';
 html{
   background-color: transparent;
 }
@@ -56,4 +56,18 @@ body {
 }
 .icon-button{
   background-color: rgb(190, 95, 138);
+}
+
+.modal-p{
+  font-weight:300;
+  line-height:150%;
+}
+
+.modal-span{
+  background-color:$belize-hole;
+  margin:5px;
+  padding:5px;
+  border-radius:5px;
+  color:white;
+  font-family:helvetica;
 }

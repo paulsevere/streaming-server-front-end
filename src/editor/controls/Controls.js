@@ -2,7 +2,6 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import GearIcon from 'material-ui/svg-icons/action/settings';
 import TextField from 'material-ui/TextField'
-import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton'
 import Dialog from 'material-ui/Dialog'
 import IconStyle from './IconButtonStyle'
