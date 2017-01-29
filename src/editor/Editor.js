@@ -6,7 +6,7 @@ import {ArrowButtons} from './controls/backAndForth'
 import {Controls} from './controls'
 import {shuffleHistory} from './controls/editorHistory'
 import ToolTip from './ToolTip'
-import './controls/controls.css';
+import './controls/controls.scss';
 import './editor_style.scss';
 
 // var ID = function () {
@@ -51,18 +51,16 @@ class Editor extends Component {
   }
 
   createBroadcast = () => {
-    console.log(this.state.roomName)
+    // console.log(this.state.roomName)
   }
 
   componentWillReceiveProps({updates, params}) {
-    console.log(this.props)
     if (params.room_id !== this.props.params.room_id) {
       this.setState({editorText: ''})
     } else if (this.props.updates.length !== updates.length && this.props.updates.length) {
-      console.log("COOOOOL")
 
-      console.log(`this.props.updates.length : ${this.props.updates.length}`)
-      console.log(`updates.length : ${updates.length}`)
+      // console.log(`this.props.updates.length : ${this.props.updates.length}`)
+      // console.log(`updates.length : ${updates.length}`)
       if (this.state.editorText === updates[0]) {
         this.setState({histPos: 0})
       } else {

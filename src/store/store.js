@@ -17,7 +17,9 @@ import {
 
 import io from 'socket.io-client';
 
-let socket = io.connect('http://localhost:8080/')
+// let socket = io.connect('https://socket-server-pihddtuthr.now.sh');
+let socket = io.connect('http://localhost:8080');
+
 
 
 function room_id(state = null, action) {
