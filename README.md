@@ -61,4 +61,4 @@ As a user I want to be able to delete my snippets.<br>
 
 ##### Initial Data Modeling Concepts<br>
 [ERD](http://i.imgur.com/TDTTEL9.png)
-<br>
+<br>  

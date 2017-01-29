@@ -22,8 +22,8 @@ class App extends Component {
       <Provider store={store}>
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
           <Router ref={r => window.r = r} history={history}>
-            <Route path="/streaming-server-front-end/:room_id" component={Editor}></Route>
-            <Redirect from="/streaming-server-front-end" to="/streaming-server-front-end/default"/>
+            <Route path="/:room_id" component={Editor}></Route>
+            <Redirect from="/" to="/default"/>
 
           </Router>
         </MuiThemeProvider>
