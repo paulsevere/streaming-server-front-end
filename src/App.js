@@ -5,8 +5,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import { Router, Route, browserHistory, Redirect } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
+import {Router, Route, browserHistory, Redirect} from 'react-router'
+import {syncHistoryWithStore} from 'react-router-redux'
 injectTapEventPlugin();
 
 import store from './store/store';
@@ -21,16 +21,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-          <Router ref={r=>window.r = r} history={history}>
-            <Route path="/:room_id" component={Editor}>
+          <Router ref={r => window.r = r} history={history}>
+            <Route path="/streaming-server-front-end/:room_id" component={Editor}></Route>
+            <Redirect from="/streaming-server-front-end" to="/streaming-server-front-end/default"/>
 
-                  </Route>
-                  <Redirect from="/" to="/default" />
-
-
-
-      </Router>
-    </MuiThemeProvider>
+          </Router>
+        </MuiThemeProvider>
 
       </Provider>
     );

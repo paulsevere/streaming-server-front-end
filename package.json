@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "brace": "git+https://github.com/paulsevere/brace.git",
+    "caniuse-db": "^1.0.30000617",
     "draft-js": "^0.9.1",
     "material-ui": "^0.16.7",
     "node-sass": "^4.3.0",
