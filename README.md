@@ -3,9 +3,9 @@
 ![Imgur](http://i.imgur.com/lXR7jTU.png)
 <br>
 
-## Purpose and Funcationality
+## Purpose and Functionality
 
-A Single Page Application built with react and redux that aggregates code snippets and provides a text field that mimics the behavior of a text editor (syntax highlighting (only javascript is currently suppoerted), etc).
+A Single Page Application built with react and redux that aggregates code snippets and provides a text field that mimics the behavior of a text editor (syntax highlighting (only javascript is currently supported), etc).
 
 
 <br>

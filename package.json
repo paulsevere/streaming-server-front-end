@@ -1,7 +1,6 @@
 {
   "name": "streaming-server-front-end",
   "version": "0.1.0",
-  "homepage": "https://paulsevere.github.io/streaming-server-front-end",
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.5.1",
