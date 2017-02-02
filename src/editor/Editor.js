@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import Notifications from '../notifications/Notification'
 
 import AceEditor from './AceEditor';
 import {connect} from 'react-redux';
@@ -21,7 +22,9 @@ class Editor extends Component {
     this.state = {
       editorText: props.updates[0],
       histPos: 0,
-      toolTip: window.localStorage.getItem('open') !== "false"
+      toolTip: window
+        .localStorage
+        .getItem('open') !== "false"
     };
     this.rewind = shuffleHistory(1).bind(this);
     this.fastForward = shuffleHistory(-1).bind(this);
@@ -34,20 +37,25 @@ class Editor extends Component {
   }
 
   roomChange = (room_id) => {
-    this.props.router.push('/' + room_id)
+    this
+      .props
+      .router
+      .push('/' + room_id)
   }
 
   pushUpdate = () => {
-    this.props.dispatch({
-      type: 'PUSH_TEXT',
-      meta: {
-        socket: {
-          channel: 'PUSH_TEXT',
-          room_id: this.props.params.room_id
-        }
-      },
-      update: this.state.editorText
-    })
+    this
+      .props
+      .dispatch({
+        type: 'PUSH_TEXT',
+        meta: {
+          socket: {
+            channel: 'PUSH_TEXT',
+            room_id: this.props.params.room_id
+          }
+        },
+        update: this.state.editorText
+      })
   }
 
   createBroadcast = () => {
@@ -78,6 +86,7 @@ class Editor extends Component {
   render() {
     return (
       <div className="editor-holder">
+        {/* <Notifications editorText={this.state.editorText}/> */}
         <ArrowButtons updates={this.props.updates} histPos={this.state.histPos} rewind={this.rewind} fastForward={this.fastForward}/>
         <div style={{
           display: 'flex'
